@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Manrope", system-ui, -apple-system, sans-serif;
+  --color-navy-950: #07111F;
+  --color-navy-900: #101D2E;
+  --color-navy-850: #122236;
+  --color-navy-800: #172B44;
+  --color-silver: #C7CED8;
+  --color-gold: #C8A96B;
+  --color-muted: #8C9BAE;
+  --color-ivory: #F4F6F9;
+}
+
+@layer base {
+  html,
+  body {
+    font-family: var(--font-body);
+    background-color: #07111F;
+    color: #F4F6F9;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.rvedha-card {
+  background: linear-gradient(145deg, rgba(18, 34, 54, 0.94) 0%, rgba(16, 29, 46, 0.96) 100%);
+  border: 1px solid rgba(199, 206, 216, 0.14);
+  box-shadow: 0 18px 42px -18px rgba(2, 8, 18, 0.78), inset 0 1px 0 rgba(199, 206, 216, 0.08);
+}
+
+.rvedha-glass {
+  background: rgba(16, 29, 46, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(199, 206, 216, 0.14);
+}
+
+.rvedha-gold-btn {
+  background: linear-gradient(135deg, #C8A96B 0%, #B3904F 100%);
+  color: #07111F;
+  border: 1px solid rgba(235, 212, 165, 0.5);
+  box-shadow: 0 8px 24px -10px rgba(200, 169, 107, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.rvedha-gold-btn:hover {
+  filter: brightness(1.06);
+  box-shadow: 0 12px 28px -8px rgba(200, 169, 107, 0.58);
+}
+
+.rvedha-silver-btn {
+  background: linear-gradient(135deg, rgba(199, 206, 216, 0.14) 0%, rgba(18, 34, 54, 0.85) 100%);
+  color: #F4F6F9;
+  border: 1px solid rgba(199, 206, 216, 0.26);
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.rvedha-silver-btn:hover {
+  border-color: rgba(200, 169, 107, 0.55);
+  background: linear-gradient(135deg, rgba(200, 169, 107, 0.14) 0%, rgba(18, 34, 54, 0.95) 100%);
+}
+
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.gold-shimmer-text {
+  background: linear-gradient(90deg, #C7CED8 0%, #F4F6F9 30%, #C8A96B 50%, #F4F6F9 70%, #C7CED8 100%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: goldShimmer 5.5s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gold-shimmer-text {
+    animation: none;
+    background: none;
+    color: #F4F6F9;
+  }
+}
+
+/* Custom sleek scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07111F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(199, 206, 216, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(200, 169, 107, 0.45);
+}
+
+/* Print styles for Patient Registration Confirmation Receipt */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #07111F !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only-card {
+    background: #ffffff !important;
+    color: #07111F !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: none !important;
+  }
+}

@@ -1,0 +1,1344 @@
+<!-- Customer Dashboard -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "surface-container-lowest": "#190915",
+        "surface-dim": "#1e0e1a",
+        "surface": "#1e0e1a",
+        "surface-container-low": "#271623",
+        "surface-container": "#271623",
+        "surface-container-high": "#352130",
+        "surface-container-highest": "#432f3c",
+        "background": "#1e0e1a",
+        "plum-border": "#5b4354",
+        "plum-accent": "#73596b",
+        "primary": "#CDC694",
+        "tan": "#CDC694",
+        "coffee": "#FFFDEF",
+        "on-primary": "#271623",
+        "secondary": "#CDC694",
+        "on-surface": "#FFFDEF"
+      },
+      borderRadius: {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      spacing: {
+        "gutter": "1rem",
+        "space-lg": "1.5rem",
+        "space-xl": "2.5rem",
+        "margin": "1.25rem",
+        "space-xs": "0.25rem",
+        "space-md": "1rem",
+        "space-sm": "0.5rem"
+      },
+      fontFamily: {
+        "headline": ["Cinzel", "serif"],
+        "body": ["Inter", "sans-serif"]
+      }
+    }
+  }
+};</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+      background-color: #1e0e1a;
+      font-family: 'Inter', sans-serif;
+    }
+    .font-cinzel-bold {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+    }
+  </style>
+</head><body class="bg-[#1e0e1a] text-[#FFFDEF] font-body min-h-screen flex flex-col selection:bg-[#5b4354] selection:text-[#FFFDEF]"><header class="fixed top-0 inset-x-0 z-50 bg-[#1e0e1a]/95 backdrop-blur-xl border-b border-[#5b4354]/60 pt-safe"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="Midnight Silver Logo" class="h-8 w-auto object-contain rounded" src="https://lh3.googleusercontent.com/aida/ALJJyrDOMaUPDh-SM8wToaDanYy74x8LpXAZZqstEy3ifG_p322pQjNfyqtJNFbhU1x9NJH-60r2tAGBXhXV8tF8Xfpn2JKnVTL3ueJV9xHfr-fDDRR2or-10tJIm6-_3WiXGgfEkg3KB0z7ott0FLze75QaoQxx8OfXL2Ztr08Jv1pRXR71lMHi6cFILErP1wFSnpJOOyBOCrhul2DUCKqgMZY5CTQDGZ7gO-N9yDTd15Y"/><div class="flex flex-col min-w-0"><span class="text-xs font-cinzel-bold text-[#CDC694] tracking-wider uppercase truncate">Midnight Silver AI</span><span class="text-lg font-cinzel-bold text-[#FFFDEF] truncate leading-tight">Overview</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-full text-[#CDC694] hover:text-[#FFFDEF] transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-[#CDC694] ring-2 ring-[#1e0e1a]"></span></button><button aria-label="Profile" class="w-11 h-11 flex items-center justify-center rounded-full p-1 transition-transform active:scale-95" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-[#5b4354]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8khSLFuldWLgkIXhugR_jGVzxJosJa-Y7IH7ip9JtGgPNr0tCJxdeGak6U2MRW_yyExuL03kgdEG3FqLL2rKTBUcv7Vbuv1BDR2YRDiR89a3K5_kwsue9N6Dfq_s2_lLuRQGqML0CaRUpGtBEQpXqkmYvjbthAOfow0kaW6CzpJSsNbGGW2ceGCuj3DnTT1j3H4OgN89mCHgfEaGcgtJQY7L2w9zKFqkRagqhtKc"/></button></div></div></header><main class="flex-1 flex flex-col relative w-full px-margin pt-16 pb-24 bg-[#1e0e1a]"><div class="flex flex-col w-full gap-space-lg">
+<!-- Greeting & Date Header -->
+<div class="relative w-full">
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="text-xs font-semibold text-[#CDC694] tracking-widest uppercase flex items-center gap-1.5">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-[#CDC694] animate-pulse"></span>
+          Tuesday, Oct 24
+        </span>
+<span class="text-[11px] px-2.5 py-0.5 rounded-full bg-[#271623] border border-[#5b4354] text-[#CDC694] tracking-wider uppercase font-semibold">
+          Executive Tier
+        </span>
+</div>
+<h1 class="font-cinzel-bold text-2xl sm:text-3xl text-[#FFFDEF] tracking-tight mt-1">
+        Good morning, Anita
+      </h1>
+<p class="text-sm text-[#CDC694]/85">
+        You have 2 upcoming consultations scheduled this week.
+      </p>
+</div>
+<!-- Quick Search Input Bar -->
+<div class="mt-space-md relative flex items-center">
+<div class="absolute left-3.5 flex items-center pointer-events-none text-[#CDC694]">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full bg-[#271623] text-[#FFFDEF] placeholder:text-[#CDC694]/60 text-sm pl-11 pr-11 py-3 rounded-xl border border-[#5b4354] focus:outline-none focus:border-[#CDC694] transition-all duration-300" placeholder="Search providers, dates, or specialties..." type="text"/>
+<button aria-label="Voice input" class="absolute right-3 p-1 rounded-lg text-[#CDC694] hover:text-[#FFFDEF] transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</button>
+</div>
+</div>
+<!-- Hero AI Quick-Action Banner -->
+<div class="relative overflow-hidden rounded-xl bg-[#271623] border border-[#5b4354] p-space-md shadow-xl">
+<div class="relative z-10 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#1e0e1a] border border-[#5b4354]">
+<div class="w-2 h-2 rounded-full bg-[#CDC694]"></div>
+<span class="text-[11px] text-[#CDC694] tracking-wider uppercase font-medium">
+            Instant AI Booking Assistant
+          </span>
+</div>
+<span class="material-symbols-outlined text-[#CDC694] text-[20px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-cinzel-bold text-lg text-[#FFFDEF]">
+          Need to book or reschedule fast?
+        </h2>
+<p class="text-xs text-[#CDC694]/85 mt-0.5">
+          Speak naturally or tap below to coordinate your schedule in seconds.
+        </p>
+</div>
+<!-- One-tap prompt interaction -->
+<button class="w-full mt-space-xs text-left bg-[#1e0e1a] border border-[#5b4354] hover:border-[#CDC694] active:scale-[0.98] transition-all p-3 rounded-lg flex items-center justify-between gap-2 group" onclick="triggerAiSuggestion(this)" type="button">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-7 h-7 rounded-full bg-[#5b4354] flex items-center justify-center flex-shrink-0 text-[#FFFDEF] group-hover:bg-[#CDC694] group-hover:text-[#1e0e1a] transition-colors">
+<span class="material-symbols-outlined text-[16px]">chat_spark</span>
+</div>
+<span class="text-xs text-[#FFFDEF] truncate">
+            “Book consultation next Tuesday afternoon”
+          </span>
+</div>
+<span class="text-xs font-semibold text-[#CDC694] whitespace-nowrap flex items-center">
+          Tap to ask
+          <span class="material-symbols-outlined text-[16px] ml-0.5 group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</span>
+</button>
+</div>
+</div>
+<!-- Upcoming Appointments Section -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#CDC694] text-[20px]">calendar_today</span>
+<h2 class="font-cinzel-bold text-lg text-[#FFFDEF]">Upcoming Appointments</h2>
+</div>
+<span class="text-xs text-[#CDC694] bg-[#271623] border border-[#5b4354] px-2.5 py-0.5 rounded-full font-medium">
+        2 Confirmed
+      </span>
+</div>
+<!-- Appointment Card 1 (In 2 Days) -->
+<div class="relative bg-[#271623] border border-[#5b4354] rounded-xl p-space-md flex flex-col gap-space-sm shadow-md overflow-hidden">
+<!-- Top Accent Bar -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#CDC694] via-[#73596b] to-[#271623]"></div>
+<div class="flex items-start justify-between gap-space-sm pt-1">
+<div class="flex items-center gap-space-sm">
+<img class="w-12 h-12 rounded-xl object-cover border border-[#5b4354] flex-shrink-0" data-alt="Distinguished professional consultant physician wearing a charcoal bespoke blazer in an upscale private consultation suite, cinematic ambient midnight lighting, calm reassuring expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTcA-yf4O1P8ZJHgH7Bjbrk6nqHEdoYzeLDwS2XZiUDKmaNXACGwYQNWaIzg3Cbqq6GZ8D2O99OnnvzNZfuC7SYpBtlh6ni6qbu5nNalt8wlcgVU8e8lkvY4a921O6ZEFflxTRqwSNg4sIlmIl_CSmcmYWSUYnQsQFBf8c5Vwy9Be37_v7MFPm7Xowf2zXUYjCS1jkeAFGIz3WFiT8gBJc6cXf466BkPqdRxra7LE"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="text-[11px] font-semibold text-[#CDC694] uppercase tracking-wide">In 2 Days</span>
+<span class="w-1 h-1 rounded-full bg-[#CDC694]"></span>
+<span class="text-xs text-[#CDC694]/80">45 min</span>
+</div>
+<h3 class="font-cinzel-bold text-base text-[#FFFDEF] truncate">Dr. Sample Provider</h3>
+<span class="text-xs text-[#CDC694]/80 truncate">Consultant Specialist</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#1e0e1a] border border-[#5b4354] text-[#CDC694] text-xs font-semibold flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          Confirmed
+        </span>
+</div>
+<!-- Schedule Meta Details -->
+<div class="grid grid-cols-1 gap-2 bg-[#1e0e1a] border border-[#5b4354]/60 p-3 rounded-lg">
+<div class="flex items-center gap-2.5 text-[#FFFDEF]">
+<span class="material-symbols-outlined text-[#CDC694] text-[18px]">schedule</span>
+<span class="text-xs font-medium">Thursday, Oct 26 • 2:30 PM – 3:15 PM</span>
+</div>
+<div class="flex items-center gap-2.5 text-[#CDC694]">
+<span class="material-symbols-outlined text-[#CDC694] text-[18px]">location_on</span>
+<span class="text-xs">Suite 402 • Main Facility (North Wing)</span>
+</div>
+</div>
+<!-- Card Action Shortcuts -->
+<div class="flex items-center gap-space-sm pt-1">
+<button class="flex-1 py-2.5 px-3 rounded-lg bg-[#CDC694] hover:bg-[#CDC694]/90 text-[#1e0e1a] text-xs font-cinzel-bold flex items-center justify-center gap-1.5 transition-colors border border-[#CDC694]" onclick="openActionModal('Dr. Sample Provider', 'Thursday, Oct 26 at 2:30 PM')" type="button">
+<span class="material-symbols-outlined text-[18px] text-[#1e0e1a]">edit_calendar</span>
+          Reschedule
+        </button>
+<button class="py-2.5 px-4 rounded-lg bg-[#1e0e1a] hover:bg-[#352130] border border-[#5b4354] text-[#CDC694] hover:text-[#FFFDEF] text-xs font-semibold transition-colors" onclick="confirmCancellation('Dr. Sample Provider')" type="button">
+          Cancel
+        </button>
+</div>
+</div>
+<!-- Appointment Card 2 (Next Week) -->
+<div class="relative bg-[#271623] border border-[#5b4354] rounded-xl p-space-md flex flex-col gap-space-sm shadow-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<img class="w-12 h-12 rounded-xl object-cover border border-[#5b4354] flex-shrink-0" data-alt="Portrait of Sarah Lin, a professional sports physiotherapist smiling warmly in a high-end wellness studio, subtle warm natural rim lighting, obsidian and silver tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKsIigcS5KYkzdNwQxt34O7ZsZJbqDxIkgXHSSxpga1Hq-ccnLACU_fE76Gjqm5RBP8M7U4jlq7FDopLBNyzA12EcGNizuohAhj-tNahnTaL86ilipGpgYdPfniXZcBB0s92exApxBA2CflbK7Bog1ZKXTxVkS4OuspIjHWAAK8JUzEoRRmdb8VlJOyPUCNOn570lzVH9wz8VEwPZary7bICiaI_xRjReTCgjDhng"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="text-[11px] font-semibold text-[#CDC694] uppercase tracking-wide">Next Week</span>
+<span class="w-1 h-1 rounded-full bg-[#CDC694]"></span>
+<span class="text-xs text-[#CDC694]/80">60 min</span>
+</div>
+<h3 class="font-cinzel-bold text-base text-[#FFFDEF] truncate">Sarah Lin, PT</h3>
+<span class="text-xs text-[#CDC694]/80 truncate">Physical Therapy</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#1e0e1a] border border-[#5b4354] text-[#CDC694] text-xs font-semibold flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          Confirmed
+        </span>
+</div>
+<!-- Schedule Meta Details -->
+<div class="grid grid-cols-1 gap-2 bg-[#1e0e1a] border border-[#5b4354]/60 p-3 rounded-lg">
+<div class="flex items-center gap-2.5 text-[#FFFDEF]">
+<span class="material-symbols-outlined text-[#CDC694] text-[18px]">schedule</span>
+<span class="text-xs font-medium">Monday, Nov 02 • 10:00 AM – 11:00 AM</span>
+</div>
+<div class="flex items-center gap-2.5 text-[#CDC694]">
+<span class="material-symbols-outlined text-[#CDC694] text-[18px]">domain</span>
+<span class="text-xs">Wellness Pavilion • Studio B</span>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="flex items-center gap-space-sm pt-1">
+<button class="flex-1 py-2.5 px-3 rounded-lg bg-[#CDC694] hover:bg-[#CDC694]/90 text-[#1e0e1a] text-xs font-cinzel-bold flex items-center justify-center gap-1.5 transition-colors border border-[#CDC694]" onclick="openActionModal('Sarah Lin, PT', 'Monday, Nov 02 at 10:00 AM')" type="button">
+<span class="material-symbols-outlined text-[18px] text-[#1e0e1a]">edit_calendar</span>
+          Reschedule
+        </button>
+<button class="py-2.5 px-4 rounded-lg bg-[#1e0e1a] hover:bg-[#352130] border border-[#5b4354] text-[#CDC694] hover:text-[#FFFDEF] text-xs font-semibold transition-colors" type="button">
+          Details
+        </button>
+</div>
+</div>
+</div>
+<!-- Available Providers Quick-Grid / Carousel -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#CDC694] text-[20px]">person_check</span>
+<h2 class="font-cinzel-bold text-lg text-[#FFFDEF]">Available Providers</h2>
+</div>
+<a class="text-xs font-semibold text-[#CDC694] hover:underline flex items-center" href="#">
+        Explore All
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<!-- Provider Horizontal Cards -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Provider 1 -->
+<div class="bg-[#271623] border border-[#5b4354] rounded-xl p-space-sm flex flex-col justify-between shadow-md">
+<div class="flex flex-col gap-space-xs">
+<div class="relative w-full h-24 rounded-lg overflow-hidden bg-[#1e0e1a]">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of Dr. Marcus Vance, senior neurologist with rim silver glasses against deep architectural obsidian shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGTCzk_wY126ShfWvOk5t2TOjRDwZuJ1TkQNYwa8k-cDoi8QWeQGC3fMAmGVuK7a034FWVHiM6Tp75ReZR8KEvhZbX8HIWtH1-BBhLjH_8rUSIsFclO0hHJ9ajT6BP246kZE2vP_zfmtEurmcrIEyR5pyXYiZd8HBq5UKxtnyEEr-EToxT9Ce8N1wpHROCc01FhVNyvL5QQjEM7WIrbfzEyiv42rAZQKnUAKXKW7c"/>
+<span class="absolute top-1.5 right-1.5 bg-[#1e0e1a] border border-[#5b4354] px-2 py-0.5 rounded-full text-[11px] font-bold text-[#CDC694]">
+              ★ 4.9
+            </span>
+</div>
+<div class="mt-1 flex flex-col">
+<h4 class="font-cinzel-bold text-sm text-[#FFFDEF] truncate">Dr. Marcus Vance</h4>
+<span class="text-xs text-[#CDC694]/80 truncate">Neurology Lead</span>
+</div>
+</div>
+<div class="mt-space-sm flex flex-col gap-2">
+<div class="bg-[#1e0e1a] border border-[#5b4354]/60 px-2 py-1.5 rounded-lg flex items-center justify-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-[#CDC694] flex-shrink-0"></span>
+<span class="text-[11px] text-[#FFFDEF] truncate font-medium">Today 4:00 PM</span>
+</div>
+<button class="w-full py-2 bg-[#CDC694] hover:bg-[#CDC694]/90 text-[#1e0e1a] font-cinzel-bold text-xs uppercase tracking-wider rounded-lg shadow transition-opacity" type="button">
+            Quick Book
+          </button>
+</div>
+</div>
+<!-- Provider 2 -->
+<div class="bg-[#271623] border border-[#5b4354] rounded-xl p-space-sm flex flex-col justify-between shadow-md">
+<div class="flex flex-col gap-space-xs">
+<div class="relative w-full h-24 rounded-lg overflow-hidden bg-[#1e0e1a]">
+<img class="w-full h-full object-cover" data-alt="Professional portrait of Elena Rostova, executive health counselor and nutritional specialist in an ultra modern slate gray clinic environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHLdNDkxfE-UL9Gg1I1E-Z8NzDUPuQN84x9deRziLmBFIcq7jJS4Cz9LAtvBrkTOmyzV2w-Fn6w7bjAat-d1TKJWOG-W67M-EH3wYO5qzPu3zE9RJ0tEenZe9TNM3emL4UOspCiBf1nNMIYsZfsHH5D1EO14amArdri4xkrdAoZa5OPL1yo4Lre6Uhx07aUGUMxlyHDimzn4zDv2b-znJc1DFW58hOzT2b3a4hNlk"/>
+<span class="absolute top-1.5 right-1.5 bg-[#1e0e1a] border border-[#5b4354] px-2 py-0.5 rounded-full text-[11px] font-bold text-[#CDC694]">
+              ★ 5.0
+            </span>
+</div>
+<div class="mt-1 flex flex-col">
+<h4 class="font-cinzel-bold text-sm text-[#FFFDEF] truncate">Elena Rostova</h4>
+<span class="text-xs text-[#CDC694]/80 truncate">Integrative Health</span>
+</div>
+</div>
+<div class="mt-space-sm flex flex-col gap-2">
+<div class="bg-[#1e0e1a] border border-[#5b4354]/60 px-2 py-1.5 rounded-lg flex items-center justify-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-[#CDC694] flex-shrink-0"></span>
+<span class="text-[11px] text-[#FFFDEF] truncate font-medium">Tomorrow 9:30 AM</span>
+</div>
+<button class="w-full py-2 bg-[#CDC694] hover:bg-[#CDC694]/90 text-[#1e0e1a] font-cinzel-bold text-xs uppercase tracking-wider rounded-lg shadow transition-opacity" type="button">
+            Quick Book
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Booking Activity Log -->
+<div class="flex flex-col gap-space-sm mb-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#CDC694] text-[20px]">history</span>
+<h2 class="font-cinzel-bold text-lg text-[#FFFDEF]">Recent Activity</h2>
+</div>
+<span class="text-xs text-[#CDC694]/80">Last 48 hours</span>
+</div>
+<div class="bg-[#271623] border border-[#5b4354] rounded-xl p-space-md flex flex-col gap-space-sm shadow-md">
+<!-- Item 1 -->
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-[#352130] border border-[#5b4354] flex items-center justify-center text-[#CDC694] flex-shrink-0 mt-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">update</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between gap-1">
+<span class="text-xs font-semibold text-[#FFFDEF] truncate">Appointment rescheduled</span>
+<span class="text-xs text-[#CDC694]/80 whitespace-nowrap">2h ago</span>
+</div>
+<p class="text-xs text-[#CDC694]/80 truncate">
+            Moved to Oct 26 with Dr. Sample Provider
+          </p>
+</div>
+</div>
+<div class="w-full h-px bg-[#5b4354]/40"></div>
+<!-- Item 2 -->
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-[#352130] border border-[#5b4354] flex items-center justify-center text-[#CDC694] flex-shrink-0 mt-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">sms</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between gap-1">
+<span class="text-xs font-semibold text-[#FFFDEF] truncate">SMS Reminder confirmed</span>
+<span class="text-xs text-[#CDC694]/80 whitespace-nowrap">Yesterday</span>
+</div>
+<p class="text-xs text-[#CDC694]/80 truncate">
+            Digital pre-check completed via +1 (555) •••• 982
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Feedback Drawer / Notification Toast -->
+<div class="fixed bottom-24 left-margin right-margin bg-[#271623] border border-[#5b4354] text-[#FFFDEF] p-4 rounded-xl shadow-2xl flex items-center justify-between gap-3 transform translate-y-32 opacity-0 transition-all duration-300 pointer-events-none z-50" id="toastNotification">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[#CDC694] text-[22px]">check_circle</span>
+<span class="text-xs text-[#FFFDEF]" id="toastMessage">Action updated successfully.</span>
+</div>
+<button class="text-[#CDC694] hover:text-[#FFFDEF]" onclick="hideToast()" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<script>
+  function triggerAiSuggestion(element) {
+    showToast("AI Assistant activated: Querying optimal slots...");
+    element.classList.add('border-[#CDC694]');
+    setTimeout(() => {
+      element.classList.remove('border-[#CDC694]');
+    }, 1500);
+  }
+
+  function openActionModal(provider, time) {
+    showToast("Opening calendar coordinator for " + provider);
+  }
+
+  function confirmCancellation(provider) {
+    if (confirm("Are you sure you wish to cancel your scheduled session with " + provider + "?")) {
+      showToast("Cancellation notice dispatched.");
+    }
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toastNotification');
+    const label = document.getElementById('toastMessage');
+    if (!toast || !label) return;
+    label.innerText = msg;
+    toast.classList.remove('translate-y-32', 'opacity-0', 'pointer-events-none');
+    toast.classList.add('translate-y-0', 'opacity-100');
+    
+    setTimeout(() => {
+      hideToast();
+    }, 3500);
+  }
+
+  function hideToast() {
+    const toast = document.getElementById('toastNotification');
+    if (toast) {
+      toast.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+    }
+  }
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-[#1e0e1a] border-t border-[#5b4354]/50"><div class="flex justify-between items-center h-20 px-space-xs"><a aria-current="page" class="flex-1 flex flex-col items-center justify-center gap-space-xs min-h-[44px] transition-all rounded-lg text-[#CDC694]" data-path="overview" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="text-[11px] font-cinzel-bold">Overview</span></a><a class="flex-1 flex flex-col items-center justify-center gap-space-xs min-h-[44px] text-[#CDC694]/60 hover:text-[#CDC694] transition-all rounded-lg" data-path="providers" href="#"><span class="material-symbols-outlined text-[22px]">person_search</span><span class="text-[11px] font-cinzel-bold">Providers</span></a><a class="flex-1 flex flex-col items-center justify-center gap-space-xs min-h-[44px] text-[#CDC694]/60 hover:text-[#CDC694] transition-all rounded-lg relative" data-path="ai-booking" href="#"><span class="material-symbols-outlined text-[24px]">auto_awesome</span><span class="text-[11px] font-cinzel-bold">AI Booking</span></a><a class="flex-1 flex flex-col items-center justify-center gap-space-xs min-h-[44px] text-[#CDC694]/60 hover:text-[#CDC694] transition-all rounded-lg" data-path="schedule" href="#"><span class="material-symbols-outlined text-[22px]">calendar_month</span><span class="text-[11px] font-cinzel-bold">Schedule</span></a><a class="flex-1 flex flex-col items-center justify-center gap-space-xs min-h-[44px] text-[#CDC694]/60 hover:text-[#CDC694] transition-all rounded-lg" data-path="admin" href="#"><span class="material-symbols-outlined text-[22px]">admin_panel_settings</span><span class="text-[11px] font-cinzel-bold">Admin</span></a></div></nav></body></html>
+
+<!-- AI Booking Assistant -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "plum-base": "#1e0e1a", "plum-surface": "#2a1725", "plum-card": "#382233", "plum-border": "#584151", "plum-border-light": "#705668", "plum-user": "#532b47", "tan": "#CDC694", "coffee": "#FFFDEF" }, "fontFamily": { "cinzel": ["Cinzel", "serif"], "sans": ["Inter", "sans-serif"] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+      background-color: #1e0e1a;
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head><body class="bg-[#1e0e1a] text-[#FFFDEF] font-sans min-h-screen flex flex-col selection:bg-[#584151] selection:text-[#FFFDEF]"><header class="fixed top-0 inset-x-0 z-50 bg-[#1e0e1a]/90 backdrop-blur-xl border-b border-[#584151]/50 shadow-md pt-safe"><div class="h-16 px-5 flex items-center justify-between gap-2"><div class="flex items-center gap-2 min-w-0"><img alt="Midnight Silver Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDOMaUPDh-SM8wToaDanYy74x8LpXAZZqstEy3ifG_p322pQjNfyqtJNFbhU1x9NJH-60r2tAGBXhXV8tF8Xfpn2JKnVTL3ueJV9xHfr-fDDRR2or-10tJIm6-_3WiXGgfEkg3KB0z7ott0FLze75QaoQxx8OfXL2Ztr08Jv1pRXR71lMHi6cFILErP1wFSnpJOOyBOCrhul2DUCKqgMZY5CTQDGZ7gO-N9yDTd15Y"/><div class="flex flex-col min-w-0"><span class="font-cinzel text-xs font-bold text-[#CDC694] tracking-wider uppercase truncate">Midnight Silver AI</span><span class="font-cinzel text-lg font-bold text-[#FFFDEF] truncate leading-tight">Ai Booking</span></div></div><div class="flex items-center gap-1"><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-full text-[#CDC694] hover:text-[#FFFDEF] transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-[#CDC694] ring-2 ring-[#1e0e1a] shadow-[0_0_8px_rgba(205,198,148,0.8)]"></span></button><button aria-label="Profile" class="w-11 h-11 flex items-center justify-center rounded-full p-1 transition-transform active:scale-95" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-[#CDC694]/60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8khSLFuldWLgkIXhugR_jGVzxJosJa-Y7IH7ip9JtGgPNr0tCJxdeGak6U2MRW_yyExuL03kgdEG3FqLL2rKTBUcv7Vbuv1BDR2YRDiR89a3K5_kwsue9N6Dfq_s2_lLuRQGqML0CaRUpGtBEQpXqkmYvjbthAOfow0kaW6CzpJSsNbGGW2ceGCuj3DnTT1j3H4OgN89mCHgfEaGcgtJQY7L2w9zKFqkRagqhtKc"/></button></div></div></header><main class="flex-1 flex flex-col relative w-full px-5 pt-16 pb-24 bg-[#1e0e1a]"><div class="flex flex-col w-full gap-4">
+<!-- Dynamic Atmospheric Glow Accent (Canvas Depth) -->
+<div class="fixed top-20 right-[-15vw] w-72 h-72 rounded-full bg-[#584151]/25 blur-[80px] pointer-events-none -z-10"></div>
+<div class="fixed bottom-24 left-[-10vw] w-64 h-64 rounded-full bg-[#CDC694]/10 blur-[70px] pointer-events-none -z-10"></div>
+<!-- Top Assistant Status Banner: Futuristic Kinetic Engine -->
+<section class="w-full bg-[#2a1725] border border-[#584151] rounded-xl p-4 shadow-lg flex items-center justify-between gap-2 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-[#CDC694]/5 via-transparent to-[#584151]/20 pointer-events-none"></div>
+<div class="flex items-center gap-3 min-w-0 relative z-10">
+<!-- AI Floating Orb Core -->
+<div class="relative flex items-center justify-center w-11 h-11 shrink-0 rounded-full bg-[#1e0e1a] border border-[#584151] shadow-inner">
+<div class="absolute inset-0 rounded-full bg-[#CDC694]/20 animate-ping opacity-60"></div>
+<div class="w-7 h-7 rounded-full bg-gradient-to-tr from-[#CDC694] via-[#CDC694]/80 to-[#FFFDEF] flex items-center justify-center shadow-[0_0_14px_rgba(205,198,148,0.65)]">
+<span class="material-symbols-outlined text-[#1e0e1a] text-[18px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+</div>
+<!-- Engine Status & Telemetry -->
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-[#CDC694] shadow-[0_0_8px_rgba(205,198,148,0.9)]"></span>
+<span class="font-cinzel text-xs font-bold text-[#CDC694] uppercase tracking-wider truncate">Midnight Silver Engine</span>
+</div>
+<span class="text-xs text-[#CDC694]/80 truncate">Syncing real-time diary calendars</span>
+</div>
+</div>
+<!-- Live Telemetry Pill -->
+<div class="shrink-0 flex items-center gap-1 bg-[#1e0e1a] border border-[#584151] px-2.5 py-1 rounded-full text-[#CDC694]">
+<span class="material-symbols-outlined text-[15px] text-[#CDC694]">bolt</span>
+<span class="font-cinzel text-xs font-bold tracking-wider">3.4ms latency</span>
+</div>
+</section>
+<!-- Suggested Booking Intent Fast-Actions -->
+<section class="w-full flex flex-col gap-1.5">
+<div class="flex items-center justify-between px-1">
+<span class="font-cinzel text-xs font-bold text-[#FFFDEF] uppercase tracking-widest">Rapid Orchestration</span>
+<span class="text-xs text-[#CDC694]/70">Tap to auto-prompt</span>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar">
+<button class="shrink-0 flex items-center gap-1.5 bg-[#2a1725] hover:bg-[#382233] text-[#FFFDEF] border border-[#584151] hover:border-[#CDC694]/70 px-4 py-2 rounded-full shadow-sm transition-all active:scale-95 text-left" onclick="insertPrompt('Consultation next Tuesday afternoon')" type="button">
+<span class="material-symbols-outlined text-[16px] text-[#CDC694]">event_available</span>
+<span class="text-xs font-medium text-[#FFFDEF]">Next Tuesday afternoon</span>
+</button>
+<button class="shrink-0 flex items-center gap-1.5 bg-[#2a1725] hover:bg-[#382233] text-[#FFFDEF] border border-[#584151] hover:border-[#CDC694]/70 px-4 py-2 rounded-full shadow-sm transition-all active:scale-95 text-left" onclick="insertPrompt('Earliest slot with Dr. Sample Provider')" type="button">
+<span class="material-symbols-outlined text-[16px] text-[#CDC694]">priority_high</span>
+<span class="text-xs font-medium text-[#FFFDEF]">Earliest with Dr. Sample</span>
+</button>
+<button class="shrink-0 flex items-center gap-1.5 bg-[#2a1725] hover:bg-[#382233] text-[#FFFDEF] border border-[#584151] hover:border-[#CDC694]/70 px-4 py-2 rounded-full shadow-sm transition-all active:scale-95 text-left" onclick="insertPrompt('Reschedule my Oct 26 visit to November')" type="button">
+<span class="material-symbols-outlined text-[16px] text-[#CDC694]">update</span>
+<span class="text-xs font-medium text-[#FFFDEF]">Reschedule Oct 26</span>
+</button>
+<button class="shrink-0 flex items-center gap-1.5 bg-[#2a1725] hover:bg-[#382233] text-[#FFFDEF] border border-[#584151] hover:border-[#CDC694]/70 px-4 py-2 rounded-full shadow-sm transition-all active:scale-95 text-left" onclick="insertPrompt('Find executive specialists open after 5 PM')" type="button">
+<span class="material-symbols-outlined text-[16px] text-[#CDC694]">nightlight</span>
+<span class="text-xs font-medium text-[#FFFDEF]">Slots after 5 PM</span>
+</button>
+</div>
+</section>
+<!-- Conversational Flow Area -->
+<section class="flex flex-col gap-4 w-full">
+<!-- User Intent Message -->
+<div class="flex flex-col items-end w-full pl-8">
+<div class="flex items-center gap-1 mb-1">
+<span class="text-xs text-[#CDC694]">Anita Sample</span>
+<span class="text-xs text-[#CDC694]/60">2:41 PM</span>
+</div>
+<div class="bg-[#382233] text-[#FFFDEF] px-4 py-2.5 rounded-2xl rounded-tr-sm shadow-md border border-[#584151] max-w-[90%]">
+<p class="text-sm leading-relaxed text-[#FFFDEF]">I need a consultation next Tuesday afternoon.</p>
+</div>
+</div>
+<!-- AI Intelligence Response Card -->
+<div class="flex flex-col items-start w-full pr-2">
+<!-- AI Meta Tag -->
+<div class="flex items-center gap-1.5 mb-1.5 px-1">
+<div class="w-4 h-4 rounded-full bg-[#CDC694] flex items-center justify-center">
+<span class="material-symbols-outlined text-[#1e0e1a] text-[10px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<span class="font-cinzel text-xs font-bold text-[#FFFDEF] uppercase tracking-wider">Midnight Concierge</span>
+<span class="text-xs text-[#CDC694]/60">Just now</span>
+</div>
+<!-- Main AI Dispatch Envelope -->
+<div class="w-full bg-[#2a1725] border border-[#584151] backdrop-blur-2xl rounded-2xl rounded-tl-sm p-4 shadow-xl flex flex-col gap-4">
+<!-- AI Dialogue intro -->
+<p class="text-sm text-[#FFFDEF] leading-relaxed">
+          I scanned clinician rosters and cross-referenced your time preferences. Found <span class="text-[#CDC694] font-semibold">3 clash-free slots</span> for <span class="text-[#FFFDEF] font-semibold">Tuesday, Oct 31</span> with certified partners:
+        </p>
+<!-- Slot Options Stream -->
+<div class="flex flex-col gap-3 w-full">
+<!-- Slot 1: Highlighted / Recommended Tan Card -->
+<div class="relative w-full rounded-xl bg-[#1e0e1a] border-2 border-[#CDC694] p-4 shadow-[0_0_24px_rgba(205,198,148,0.2)] transition-all flex flex-col gap-3 overflow-hidden">
+<!-- Tan Top Accent Bar -->
+<div class="absolute top-0 inset-x-0 h-1 bg-[#CDC694]"></div>
+<div class="flex items-start justify-between gap-1">
+<div class="flex items-center gap-2">
+<span class="bg-[#382233] text-[#CDC694] border border-[#705668] px-2 py-0.5 rounded font-cinzel text-xs font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-[#CDC694]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                  Optimal Match
+                </span>
+<span class="text-xs text-[#CDC694]/80">Zero wait buffer</span>
+</div>
+<span class="font-cinzel text-sm font-bold text-[#CDC694]">45 MIN</span>
+</div>
+<!-- Provider & Slot Detail -->
+<div class="flex items-center gap-3 py-1">
+<div class="relative shrink-0">
+<img class="w-12 h-12 rounded-full object-cover border border-[#CDC694]" data-alt="Portrait of Dr Sample, a professional senior physician consultant in tailored navy clinical attire against a softly lit minimalist dark clinic interior, editorial lighting, cinematic depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwz-obuV6_dXEakIjkIX-ZcGr9JiIbDfYOUw_qitJ2vVGFodRBJcDuuRyqUaG4wr_WoAdOsX8_vYP-cJ2VeylcTZkWQlVTzZBSkNx0ujJ3KnNDNMv7p9dTyVD6astDY3IRNgj6iMsPYZJj33XA12vAF20YEOT5--_3NuPYiuAB5PKpaeOxBAG0uQ162sT20VoSM8JWQC9FPxqb14TtLazSnCxs_dGIiqYlzmStuzM"/>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-[#CDC694] flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[#1e0e1a] text-[10px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-baseline gap-1">
+<span class="font-cinzel text-base font-bold text-[#FFFDEF] truncate">2:00 PM – 2:45 PM</span>
+</div>
+<span class="text-sm font-medium text-[#FFFDEF] truncate">Dr. Sample Provider</span>
+<span class="text-xs text-[#CDC694]/80 truncate">Executive Lead Specialist • Suite 402</span>
+</div>
+</div>
+<!-- Primary Action -->
+<button class="w-full bg-[#CDC694] hover:bg-[#FFFDEF] text-[#1e0e1a] py-2.5 px-4 rounded-lg font-cinzel text-sm font-bold tracking-wide shadow-md flex items-center justify-center gap-2 transition-all active:scale-[0.98]" onclick="confirmSlot('Tuesday, Oct 31, 2:00 PM', 'Dr. Sample Provider')" type="button">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span>Select &amp; Reserve Slot</span>
+</button>
+</div>
+<!-- Slot 2: Alternative afternoon -->
+<div class="w-full rounded-xl bg-[#1e0e1a] border border-[#584151] p-4 shadow-sm flex flex-col gap-2.5 hover:border-[#CDC694]/70 transition-colors">
+<div class="flex items-center justify-between">
+<span class="bg-[#382233] border border-[#705668] text-[#FFFDEF] px-2 py-0.5 rounded font-cinzel text-xs font-bold uppercase">Standard Routine</span>
+<span class="font-cinzel text-xs font-bold text-[#CDC694]">45 MIN</span>
+</div>
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover shrink-0 border border-[#584151]" data-alt="Close-up professional headshot of Dr Sample smiling warmly in a dark slate grey environment with elegant warm lighting accents, high resolution photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDbrIa3V77LyorIB47gru5fbvlS3wDkmxqh_PvTNC4fctgC-goJDiJeir9nW8Q_pOjY8HlcumsdJH2oMmWnSHbDgerAzbXUM6IcxjRyVMIN5VdF8YhJQCjskTo_fX1xYK6KiIHBgQEckbn5N8URhCR50v6QNGl7e40gdXzrlKztydKVte7CfUqVcyd4ZKfiaWqboLvt9EdA0TYuGlt-Q5ChYQGOOJa49MDU1VpPV0"/>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-cinzel text-sm font-bold text-[#FFFDEF] truncate">3:30 PM – 4:15 PM</span>
+<span class="text-xs text-[#CDC694]/80 truncate">Dr. Sample Provider • Executive Lead</span>
+</div>
+<button class="bg-[#382233] text-[#FFFDEF] hover:bg-[#CDC694] hover:text-[#1e0e1a] px-3.5 py-1.5 rounded-lg font-cinzel text-xs font-bold transition-all active:scale-95 shrink-0 flex items-center gap-1 border border-[#705668]" onclick="confirmSlot('Tuesday, Oct 31, 3:30 PM', 'Dr. Sample Provider')" type="button">
+<span>Select</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Slot 3: Colleague specialist option -->
+<div class="w-full rounded-xl bg-[#1e0e1a] border border-[#584151] p-4 shadow-sm flex flex-col gap-2.5 hover:border-[#CDC694]/70 transition-colors">
+<div class="flex items-center justify-between">
+<span class="bg-[#382233] border border-[#705668] text-[#CDC694] px-2 py-0.5 rounded font-cinzel text-xs font-bold uppercase">Affiliated Associate</span>
+<span class="font-cinzel text-xs font-bold text-[#CDC694]">45 MIN</span>
+</div>
+<div class="flex items-center gap-3">
+<img class="w-10 h-10 rounded-full object-cover shrink-0 border border-[#584151]" data-alt="Editorial portrait photo of Dr Marcus Vance, a distinguished male specialist in a tailored dark charcoal suit, soft cinematic lighting against midnight blue backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2IiqRFw_q4ex4xBsrg4AVMMuibndxq-Fqyfti4oRN0HGjlDp6JYKrbM5BVmMddb0Sh2mu30fw9juJxLywnb4ChJs1Uz-j81YyEM0T4AO5keodoKdvxWxqd6pEIOuXXrH94X8xWPLbB60lXf0QZ4FOE_4OSEKJN0ZI_bObzEdDAVRoZvm5nEUeGd6lUdugnJNf39UmCKc2WMO09duX0QHq5-7NxVUBJCBN9fQywJ0"/>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-cinzel text-sm font-bold text-[#FFFDEF] truncate">4:45 PM – 5:30 PM</span>
+<span class="text-xs text-[#CDC694]/80 truncate">Dr. Marcus Vance • Senior Associate</span>
+</div>
+<button class="bg-[#382233] text-[#FFFDEF] hover:bg-[#CDC694] hover:text-[#1e0e1a] px-3.5 py-1.5 rounded-lg font-cinzel text-xs font-bold transition-all active:scale-95 shrink-0 flex items-center gap-1 border border-[#705668]" onclick="confirmSlot('Tuesday, Oct 31, 4:45 PM', 'Dr. Marcus Vance')" type="button">
+<span>Select</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Clarification footnote -->
+<div class="flex items-center justify-between pt-1 text-[#CDC694]/70 text-xs">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-[#CDC694]">lock</span>
+            No prepayments required
+          </span>
+<span class="font-cinzel text-xs font-bold tracking-wider text-[#FFFDEF]">Holds valid for 12m</span>
+</div>
+</div>
+</div>
+<!-- Active AI Ambient Status / Listening Indicator -->
+<div class="w-full flex items-center justify-center gap-2 py-1">
+<div class="flex items-center gap-1.5 bg-[#2a1725] border border-[#584151] px-4 py-1.5 rounded-full shadow-inner">
+<span class="w-1.5 h-1.5 rounded-full bg-[#CDC694] animate-pulse"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#705668] animate-pulse delay-100"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#CDC694] animate-pulse delay-200"></span>
+<span class="font-cinzel text-xs font-bold text-[#CDC694] ml-1 uppercase tracking-wider">AI actively watching for diary cancellations</span>
+</div>
+</div>
+</section>
+<!-- Interactive Slot Reservation Toast/Confirmation Bar -->
+<div class="hidden w-full bg-[#382233] text-[#FFFDEF] border border-[#CDC694] p-4 rounded-xl shadow-xl flex items-center justify-between gap-2 transition-all duration-300" id="bookingToast">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[24px] text-[#CDC694] shrink-0" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<div class="flex flex-col min-w-0">
+<span class="font-cinzel text-sm font-bold truncate text-[#FFFDEF]" id="toastHeading">Slot Locked</span>
+<span class="text-xs truncate text-[#FFFDEF]/90" id="toastSubtext">Preparing intake summary</span>
+</div>
+</div>
+<button class="shrink-0 p-1 text-[#FFFDEF]/80 hover:text-[#FFFDEF]" onclick="closeToast()" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Dedicated Bottom Assistant Command Bar (Mobile Floating Dock) -->
+<section class="sticky bottom-0 inset-x-0 w-full pt-1 pb-1 bg-gradient-to-t from-[#1e0e1a] via-[#1e0e1a]/95 to-transparent z-40">
+<div class="relative flex items-center w-full bg-[#2a1725] border border-[#584151] rounded-full p-1.5 shadow-[0_8px_32px_rgba(30,14,26,0.8)]">
+<!-- Voice Input Affordance -->
+<button aria-label="Voice booking dictation" class="w-10 h-10 rounded-full flex items-center justify-center text-[#CDC694] hover:text-[#FFFDEF] transition-colors shrink-0 active:scale-90" id="micBtn" onclick="toggleVoiceInput()" type="button">
+<span class="material-symbols-outlined text-[22px]">mic</span>
+</button>
+<!-- Conversational Input -->
+<input class="w-full bg-transparent text-[#FFFDEF] placeholder:text-[#CDC694]/50 text-sm px-2 focus:outline-none min-w-0" id="assistantInput" onkeydown="handleKey(event)" placeholder="Type or speak your booking request..." type="text"/>
+<!-- Send / Dispatch Trigger -->
+<button aria-label="Send booking request" class="w-10 h-10 rounded-full bg-[#CDC694] text-[#1e0e1a] flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(205,198,148,0.4)] hover:bg-[#FFFDEF] transition-transform active:scale-90" onclick="dispatchMessage()" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_upward</span>
+</button>
+</div>
+</section>
+</div>
+<script>
+  function insertPrompt(text) {
+    const input = document.getElementById('assistantInput');
+    if (input) {
+      input.value = text;
+      input.focus();
+    }
+  }
+
+  function handleKey(e) {
+    if (e.key === 'Enter') {
+      dispatchMessage();
+    }
+  }
+
+  function dispatchMessage() {
+    const input = document.getElementById('assistantInput');
+    if (!input || !input.value.trim()) return;
+    
+    const toast = document.getElementById('bookingToast');
+    const toastHeading = document.getElementById('toastHeading');
+    const toastSubtext = document.getElementById('toastSubtext');
+    
+    if (toast && toastHeading && toastSubtext) {
+      toastHeading.textContent = "Analyzing Slot Availability";
+      toastSubtext.textContent = 'Query: "' + input.value.trim() + '"';
+      toast.classList.remove('hidden');
+    }
+    input.value = '';
+  }
+
+  function confirmSlot(slotTime, provider) {
+    const toast = document.getElementById('bookingToast');
+    const toastHeading = document.getElementById('toastHeading');
+    const toastSubtext = document.getElementById('toastSubtext');
+    
+    if (toast && toastHeading && toastSubtext) {
+      toastHeading.textContent = "Reserved: " + slotTime;
+      toastSubtext.textContent = provider + " has placed a complimentary hold.";
+      toast.classList.remove('hidden');
+      
+      toast.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  function closeToast() {
+    const toast = document.getElementById('bookingToast');
+    if (toast) toast.classList.add('hidden');
+  }
+
+  function toggleVoiceInput() {
+    const mic = document.getElementById('micBtn');
+    const input = document.getElementById('assistantInput');
+    if (mic) {
+      mic.classList.toggle('text-[#CDC694]');
+      mic.classList.toggle('animate-pulse');
+      if (input && !input.value) {
+        input.value = "Listening: schedule a 45min visit...";
+      }
+    }
+  }
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-[#1e0e1a]/95 backdrop-blur-xl border-t border-[#584151]/50 shadow-lg"><div class="flex justify-between items-center h-20 px-1"><a class="flex-1 flex flex-col items-center justify-center gap-1 min-h-[44px] text-[#CDC694]/70 hover:text-[#FFFDEF] transition-all rounded-lg" data-path="overview" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-cinzel text-[11px] font-bold tracking-wider">Overview</span></a><a class="flex-1 flex flex-col items-center justify-center gap-1 min-h-[44px] text-[#CDC694]/70 hover:text-[#FFFDEF] transition-all rounded-lg" data-path="providers" href="#"><span class="material-symbols-outlined text-[22px]">person_search</span><span class="font-cinzel text-[11px] font-bold tracking-wider">Providers</span></a><a aria-current="page" class="flex-1 flex flex-col items-center justify-center gap-1 min-h-[44px] transition-all rounded-lg relative text-[#CDC694] font-bold shadow-[0_0_16px_rgba(205,198,148,0.25)]" data-path="ai-booking" href="#"><span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span><span class="font-cinzel text-[11px] font-bold tracking-wider">AI Booking</span></a><a class="flex-1 flex flex-col items-center justify-center gap-1 min-h-[44px] text-[#CDC694]/70 hover:text-[#FFFDEF] transition-all rounded-lg" data-path="schedule" href="#"><span class="material-symbols-outlined text-[22px]">calendar_month</span><span class="font-cinzel text-[11px] font-bold tracking-wider">Schedule</span></a><a class="flex-1 flex flex-col items-center justify-center gap-1 min-h-[44px] text-[#CDC694]/70 hover:text-[#FFFDEF] transition-all rounded-lg" data-path="admin" href="#"><span class="material-symbols-outlined text-[22px]">admin_panel_settings</span><span class="font-cinzel text-[11px] font-bold tracking-wider">Admin</span></a></div></nav></body></html>
+
+<!-- Provider Discovery -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "plum-base": "#1e0e1a",
+        "plum-card": "#281724",
+        "plum-surface": "#362232",
+        "plum-border": "#5b4354",
+        "plum-border-light": "#73596b",
+        "tan": "#CDC694",
+        "coffee": "#FFFDEF"
+      },
+      fontFamily: {
+        cinzel: ["Cinzel", "serif"],
+        body: ["Inter", "sans-serif"]
+      }
+    }
+  }
+};</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+      font-family: 'Inter', sans-serif;
+    }
+    .font-cinzel {
+      font-family: 'Cinzel', serif;
+    }
+  </style>
+</head><body class="bg-[#1e0e1a] text-[#FFFDEF] min-h-screen flex flex-col selection:bg-[#CDC694] selection:text-[#1e0e1a]"><header class="fixed top-0 inset-x-0 z-50 bg-[#1e0e1a]/95 backdrop-blur-xl border-b border-[#5b4354]/60 pt-safe"><div class="h-16 px-5 flex items-center justify-between gap-2"><div class="flex items-center gap-2 min-w-0"><img alt="Executive Network Logo" class="h-8 w-auto object-contain brightness-125 contrast-125 sepia-[0.3]" src="https://lh3.googleusercontent.com/aida/ALJJyrDOMaUPDh-SM8wToaDanYy74x8LpXAZZqstEy3ifG_p322pQjNfyqtJNFbhU1x9NJH-60r2tAGBXhXV8tF8Xfpn2JKnVTL3ueJV9xHfr-fDDRR2or-10tJIm6-_3WiXGgfEkg3KB0z7ott0FLze75QaoQxx8OfXL2Ztr08Jv1pRXR71lMHi6cFILErP1wFSnpJOOyBOCrhul2DUCKqgMZY5CTQDGZ7gO-N9yDTd15Y"/><div class="flex flex-col min-w-0"><span class="text-[12px] font-bold tracking-widest text-[#CDC694] uppercase truncate font-cinzel">Executive Network</span><span class="text-[20px] font-bold text-[#FFFDEF] truncate leading-tight font-cinzel tracking-wide">Providers</span></div></div><div class="flex items-center gap-1"><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-full text-[#CDC694] hover:text-[#FFFDEF] transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-[#CDC694] ring-2 ring-[#1e0e1a] shadow-[0_0_8px_rgba(205,198,148,0.8)]"></span></button><button aria-label="Profile" class="w-11 h-11 flex items-center justify-center rounded-full p-1 transition-transform active:scale-95" type="button"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-[#5b4354]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8khSLFuldWLgkIXhugR_jGVzxJosJa-Y7IH7ip9JtGgPNr0tCJxdeGak6U2MRW_yyExuL03kgdEG3FqLL2rKTBUcv7Vbuv1BDR2YRDiR89a3K5_kwsue9N6Dfq_s2_lLuRQGqML0CaRUpGtBEQpXqkmYvjbthAOfow0kaW6CzpJSsNbGGW2ceGCuj3DnTT1j3H4OgN89mCHgfEaGcgtJQY7L2w9zKFqkRagqhtKc"/></button></div></div></header><main class="flex-1 flex flex-col relative w-full px-5 pt-16 pb-24 bg-[#1e0e1a]"><div class="flex flex-col w-full gap-6 pb-6">
+<!-- Ambient Backdrop Glow Element -->
+<div class="relative w-full">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 w-72 h-36 bg-[#362232]/50 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<!-- Search & Discovery Section Header -->
+<div class="flex flex-col gap-2 pt-2">
+<div class="flex items-center justify-between">
+<div>
+<span class="text-[11px] font-bold text-[#CDC694] uppercase tracking-widest block font-cinzel">Executive Directory</span>
+<h1 class="text-[24px] font-bold text-[#FFFDEF] font-cinzel tracking-wide">Find Service Providers</h1>
+</div>
+<div class="w-10 h-10 rounded-full bg-[#281724] border border-[#5b4354] flex items-center justify-center text-[#CDC694] shadow-sm">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</div>
+</div>
+<!-- Recessed Search Input -->
+<div class="relative flex items-center mt-1">
+<span class="material-symbols-outlined absolute left-3.5 text-[#CDC694]/80 text-[20px] pointer-events-none">search</span>
+<input class="w-full bg-[#281724] text-[#FFFDEF] placeholder:text-[#FFFDEF]/50 border border-[#5b4354] text-[14px] pl-11 pr-10 py-3 rounded-xl shadow-inner focus:outline-none focus:border-[#CDC694] transition-all" placeholder="Search by provider name, specialty, or department..." type="text"/>
+<button aria-label="Clear or voice search" class="absolute right-3 text-[#CDC694] hover:text-[#FFFDEF] transition-colors flex items-center" type="button">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+</button>
+</div>
+<!-- Filter Pills Carousel -->
+<div class="flex items-center gap-2 overflow-x-auto py-1.5 -mx-5 px-5 scrollbar-none">
+<button class="filter-chip active flex-shrink-0 px-3.5 py-1.5 rounded-full bg-[#CDC694] text-[#1e0e1a] font-bold text-[12px] border border-[#CDC694] shadow-[0_0_12px_rgba(205,198,148,0.35)] transition-all font-cinzel tracking-wider" type="button">
+          All Providers
+        </button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-[#281724] text-[#FFFDEF] border border-[#5b4354] hover:border-[#CDC694] text-[12px] font-bold transition-all font-cinzel tracking-wider" type="button">
+          Available Today
+        </button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-[#281724] text-[#FFFDEF] border border-[#5b4354] hover:border-[#CDC694] text-[12px] font-bold transition-all font-cinzel tracking-wider" type="button">
+          Consultations
+        </button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-[#281724] text-[#FFFDEF] border border-[#5b4354] hover:border-[#CDC694] text-[12px] font-bold transition-all font-cinzel tracking-wider" type="button">
+          Specialists
+        </button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-full bg-[#281724] text-[#FFFDEF] border border-[#5b4354] hover:border-[#CDC694] text-[12px] font-bold transition-all font-cinzel tracking-wider" type="button">
+          Top Rated
+        </button>
+</div>
+</div>
+</div>
+<!-- Provider Cards Stream -->
+<div class="flex flex-col gap-4">
+<!-- Card 1: Dr. Sample Provider -->
+<div class="relative bg-[#281724] border border-[#5b4354] rounded-xl p-4 shadow-xl flex flex-col gap-4">
+<!-- Top Profile Row -->
+<div class="flex items-start gap-4">
+<div class="relative flex-shrink-0">
+<img class="w-16 h-16 rounded-xl object-cover border border-[#5b4354]" data-alt="Editorial portrait of a distinguished senior clinical consultant doctor wearing tailored navy attire against a dark moody minimalist architectural background with subtle metallic rim lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_dm4EuIeGrqzDBrgjxH117RdaEuMXRnAR72RtHl6DsH06_DkqUBi-kMsuRhSgb1YpmKmyKerb8mkLpn9m6_TXMnHK1v4yKJcH_CNpMsCOR27p0_BdrTsMRiB20FkcPgwritj-xzly_nz6sOsD9jLpIg_nun0XdGrFM2aO7pccEB6ulzQxHQlSWMFWnvFRGpJBRebbLnvlV1JD1L16fXvHaNr1DhH7TTGM_xNULYU"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-[#CDC694] flex items-center justify-center shadow-[0_0_8px_rgba(205,198,148,0.9)]">
+<span class="material-symbols-outlined text-[#1e0e1a] text-[10px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h2 class="text-[19px] font-bold text-[#FFFDEF] font-cinzel tracking-wide truncate">Dr. Julian Sterling</h2>
+<button aria-label="Save provider" class="text-[#CDC694] hover:text-[#FFFDEF] transition-colors p-1" type="button">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+</button>
+</div>
+<p class="text-[13px] text-[#FFFDEF]/75 truncate mt-0.5">Senior Clinical Consultant &amp; Specialist</p>
+<div class="flex items-center gap-2 mt-1.5">
+<div class="flex items-center gap-1 text-[#CDC694]">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[12px] font-bold text-[#FFFDEF]">4.9</span>
+</div>
+<span class="text-[12px] text-[#FFFDEF]/40">·</span>
+<span class="text-[12px] text-[#FFFDEF]/70">128 reviews</span>
+</div>
+</div>
+</div>
+<!-- Availability & Next Slot Pill Strip -->
+<div class="flex items-center justify-between bg-[#1e0e1a] border border-[#5b4354] rounded-lg px-3 py-2">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="w-2 h-2 rounded-full bg-[#CDC694] animate-pulse"></span>
+<span class="text-[11px] font-bold text-[#CDC694] uppercase tracking-wider truncate font-cinzel">3 slots available today</span>
+</div>
+<span class="text-[12px] text-[#FFFDEF]/80 flex-shrink-0">Next: Today 3:15 PM</span>
+</div>
+<!-- Quick Slot Chips -->
+<div class="flex flex-col gap-1.5">
+<span class="text-[11px] font-bold text-[#CDC694] uppercase tracking-widest font-cinzel">Fast Reserve</span>
+<div class="grid grid-cols-3 gap-2 slot-group" data-provider="sterling">
+<button class="slot-pill active py-2 px-2 text-center rounded-lg bg-[#CDC694] text-[#1e0e1a] text-[13px] font-bold border border-[#CDC694] shadow-[0_0_12px_rgba(205,198,148,0.25)] transition-all font-cinzel" type="button">
+            3:15 PM
+          </button>
+<button class="slot-pill py-2 px-2 text-center rounded-lg bg-[#281724] text-[#FFFDEF] border border-[#5b4354] hover:border-[#CDC694] text-[13px] font-bold transition-all font-cinzel" type="button">
+            4:00 PM
+          </button>
+<button class="slot-pill py-2 px-2 text-center rounded-lg bg-[#281724] text-[#FFFDEF] border border-[#5b4354] hover:border-[#CDC694] text-[13px] font-bold transition-all font-cinzel" type="button">
+            5:30 PM
+          </button>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="py-2.5 px-3 rounded-lg bg-[#281724] border border-[#5b4354] text-[#FFFDEF] hover:border-[#CDC694] text-[13px] font-bold text-center transition-all font-cinzel tracking-wider" type="button">
+          View Profile
+        </button>
+<button class="py-2.5 px-3 rounded-lg bg-[#CDC694] text-[#1e0e1a] text-[13px] font-bold text-center shadow-[0_0_14px_rgba(205,198,148,0.3)] active:scale-[0.98] transition-all flex items-center justify-center gap-1.5 font-cinzel tracking-wider" type="button">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span>Book Now</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Dr. Elena Rostova -->
+<div class="relative bg-[#281724] border border-[#5b4354] rounded-xl p-4 shadow-xl flex flex-col gap-4">
+<!-- Top Profile Row -->
+<div class="flex items-start gap-4">
+<div class="relative flex-shrink-0">
+<img class="w-16 h-16 rounded-xl object-cover border border-[#5b4354]" data-alt="Sophisticated portrait of Dr. Elena Rostova, female executive diagnostics medical director, wearing sleek dark clinical blazer in a warm amber and silver lit state-of-the-art lounge." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmLZaPy5kU6a9YNK-IyKamO4ZXxuJO7ILYSHVW1YTkib9hzY0Oh02U3LnQMd3PmXynBvw1F74rkTVjqQaHvZxM77YT5Q6W401bm2vmjvK2BDLEApOuYngFivTFvPWaChgM6wmfmlHGnOU8UaVADgck31i76KGQI90toevBbsA0PKBbe1Qys5yRp0jVZyEFFPYTkI40OihysrN8qI_vEmHdw-POciTmw1OmJ-EENoI"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-[#5b4354] flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[#CDC694] text-[10px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h2 class="text-[19px] font-bold text-[#FFFDEF] font-cinzel tracking-wide truncate">Dr. Elena Rostova</h2>
+<button aria-label="Save provider" class="text-[#CDC694] hover:text-[#FFFDEF] transition-colors p-1" type="button">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+</button>
+</div>
+<p class="text-[13px] text-[#FFFDEF]/75 truncate mt-0.5">Executive Wellness &amp; Diagnostics</p>
+<div class="flex items-center gap-2 mt-1.5">
+<div class="flex items-center gap-1 text-[#CDC694]">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[12px] font-bold text-[#FFFDEF]">5.0</span>
+</div>
+<span class="text-[12px] text-[#FFFDEF]/40">·</span>
+<span class="text-[12px] text-[#FFFDEF]/70">94 reviews</span>
+</div>
+</div>
+</div>
+<!-- Availability & Next Slot Pill Strip -->
+<div class="flex items-center justify-between bg-[#1e0e1a] border border-[#5b4354] rounded-lg px-3 py-2">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="w-2 h-2 rounded-full bg-[#CDC694]"></span>
+<span class="text-[11px] font-bold text-[#CDC694] uppercase tracking-wider truncate font-cinzel">Next available tomorrow</span>
+</div>
+<span class="text-[12px] text-[#FFFDEF]/80 flex-shrink-0">Tomorrow 10:00 AM</span>
+</div>
+<!-- Quick Slot Chips -->
+<div class="flex flex-col gap-1.5">
+<span class="text-[11px] font-bold text-[#CDC694] uppercase tracking-widest font-cinzel">Fast Reserve</span>
+<div class="grid grid-cols-3 gap-2 slot-group" data-provider="rostova">
+<button class="slot-pill py-2 px-2 text-center rounded-lg bg-[#281724] text-[#FFFDEF] border border-[#5b4354] hover:border-[#CDC694] text-[13px] font-bold transition-all font-cinzel" type="button">
+            10:00 AM
+          </button>
+<button class="slot-pill py-2 px-2 text-center rounded-lg bg-[#281724] text-[#FFFDEF] border border-[#5b4354] hover:border-[#CDC694] text-[13px] font-bold transition-all font-cinzel" type="button">
+            11:30 AM
+          </button>
+<button class="slot-pill py-2 px-2 text-center rounded-lg bg-[#281724] text-[#FFFDEF] border border-[#5b4354] hover:border-[#CDC694] text-[13px] font-bold transition-all font-cinzel" type="button">
+            2:00 PM
+          </button>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="py-2.5 px-3 rounded-lg bg-[#281724] border border-[#5b4354] text-[#FFFDEF] hover:border-[#CDC694] text-[13px] font-bold text-center transition-all font-cinzel tracking-wider" type="button">
+          View Profile
+        </button>
+<button class="py-2.5 px-3 rounded-lg bg-[#CDC694] text-[#1e0e1a] text-[13px] font-bold text-center shadow-[0_0_14px_rgba(205,198,148,0.3)] active:scale-[0.98] transition-all flex items-center justify-center gap-1.5 font-cinzel tracking-wider" type="button">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span>Book Now</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Dr. Marcus Vance -->
+<div class="relative bg-[#281724] border border-[#5b4354] rounded-xl p-4 shadow-xl flex flex-col gap-4">
+<!-- Top Profile Row -->
+<div class="flex items-start gap-4">
+<div class="relative flex-shrink-0">
+<img class="w-16 h-16 rounded-xl object-cover border border-[#5b4354]" data-alt="Confident studio headshot of Dr. Marcus Vance, sports and orthopedic surgeon consultant, sharp modern portrait with deep obsidian tones and faint midnight blue highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPRGTUJF8BDnWeMMjl6BnpBOR9-s4qrs10sNKiH6ZCw9ciKXW1jIWHIUHdijUahs-3AviCqwExA2VAsqYRNzG8BUXpBb_E82G_mZIpzQylyEMb2leNcxxjlo9Mzaia6rPAU2g1fgyWFnc2mWgSvySFMET5jqQQRETpS6G1ew7X_Ob6WMBwiovFr7AGQ7KKgG3usTkY27BExFAvcV0JvTljgg0saCC1Y8H7A9WDaLk"/>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-[#5b4354] flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[#CDC694] text-[10px]" style="font-variation-settings: 'FILL' 1;">shield</span>
+</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h2 class="text-[19px] font-bold text-[#FFFDEF] font-cinzel tracking-wide truncate">Dr. Marcus Vance</h2>
+<button aria-label="Save provider" class="text-[#CDC694] hover:text-[#FFFDEF] transition-colors p-1" type="button">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+</button>
+</div>
+<p class="text-[13px] text-[#FFFDEF]/75 truncate mt-0.5">Orthopedic &amp; Sports Consultation</p>
+<div class="flex items-center gap-2 mt-1.5">
+<div class="flex items-center gap-1 text-[#CDC694]">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[12px] font-bold text-[#FFFDEF]">4.8</span>
+</div>
+<span class="text-[12px] text-[#FFFDEF]/40">·</span>
+<span class="text-[12px] text-[#FFFDEF]/70">82 reviews</span>
+</div>
+</div>
+</div>
+<!-- Availability & Next Slot Pill Strip -->
+<div class="flex items-center justify-between bg-[#1e0e1a] border border-[#5b4354] rounded-lg px-3 py-2">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="w-2 h-2 rounded-full bg-[#CDC694]"></span>
+<span class="text-[11px] font-bold text-[#CDC694] uppercase tracking-wider truncate font-cinzel">Next available Thursday</span>
+</div>
+<span class="text-[12px] text-[#FFFDEF]/80 flex-shrink-0">Thu 9:00 AM</span>
+</div>
+<!-- Action Buttons (No slot chips for later day) -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="py-2.5 px-3 rounded-lg bg-[#281724] border border-[#5b4354] text-[#FFFDEF] hover:border-[#CDC694] text-[13px] font-bold text-center transition-all font-cinzel tracking-wider" type="button">
+          View Profile
+        </button>
+<button class="py-2.5 px-3 rounded-lg bg-[#CDC694] text-[#1e0e1a] text-[13px] font-bold text-center shadow-[0_0_14px_rgba(205,198,148,0.3)] active:scale-[0.98] transition-all flex items-center justify-center gap-1.5 font-cinzel tracking-wider" type="button">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span>
+<span>Book Thursday</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Instant AI Booking Shortcut Floating Banner -->
+<div class="relative mt-2 overflow-hidden rounded-xl bg-[#281724] border border-[#5b4354] p-4 shadow-xl">
+<!-- Subtle Accent Glow -->
+<div class="absolute -right-8 -bottom-8 w-32 h-32 bg-[#362232]/60 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center gap-4 relative z-10">
+<div class="w-11 h-11 rounded-xl bg-[#1e0e1a] border border-[#5b4354] flex items-center justify-center text-[#CDC694] flex-shrink-0 shadow-[0_0_14px_rgba(205,198,148,0.2)]">
+<span class="material-symbols-outlined text-[24px]">auto_awesome</span>
+</div>
+<div class="flex-1 min-w-0">
+<h3 class="text-[15px] font-bold text-[#FFFDEF] truncate font-cinzel tracking-wide">Custom AI Scheduling Concierge</h3>
+<p class="text-[13px] text-[#FFFDEF]/75 line-clamp-2 mt-0.5">Can't find a suitable time? Let AI negotiate and secure custom executive slots for you.</p>
+</div>
+</div>
+<div class="mt-3 pt-3 flex items-center justify-between border-t border-[#5b4354]/60 relative z-10">
+<span class="text-[11px] font-bold text-[#CDC694] uppercase tracking-widest flex items-center gap-1.5 font-cinzel">
+<span class="w-1.5 h-1.5 rounded-full bg-[#CDC694] animate-ping"></span>
+        Direct Match Active
+      </span>
+<button class="px-3.5 py-1.5 rounded-lg bg-[#CDC694] text-[#1e0e1a] text-[12px] font-bold flex items-center gap-1 hover:brightness-110 active:scale-95 transition-all shadow-[0_0_12px_rgba(205,198,148,0.35)] font-cinzel tracking-wider" type="button">
+<span>Launch Assistant</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Interactive Client-side Micro-interactions -->
+<script>
+  (function() {
+    // Interactive Time Slot Chip Selection
+    const slotGroups = document.querySelectorAll('.slot-group');
+    slotGroups.forEach(group => {
+      const pills = group.querySelectorAll('.slot-pill');
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          pills.forEach(p => {
+            p.classList.remove('bg-[#CDC694]', 'text-[#1e0e1a]', 'border-[#CDC694]', 'shadow-[0_0_12px_rgba(205,198,148,0.25)]');
+            p.classList.add('bg-[#281724]', 'text-[#FFFDEF]', 'border-[#5b4354]');
+          });
+          pill.classList.remove('bg-[#281724]', 'text-[#FFFDEF]', 'border-[#5b4354]');
+          pill.classList.add('bg-[#CDC694]', 'text-[#1e0e1a]', 'border-[#CDC694]', 'shadow-[0_0_12px_rgba(205,198,148,0.25)]');
+        });
+      });
+    });
+
+    // Filter Chips Toggle
+    const filterChips = document.querySelectorAll('.filter-chip');
+    filterChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        filterChips.forEach(c => {
+          c.classList.remove('bg-[#CDC694]', 'text-[#1e0e1a]', 'border-[#CDC694]', 'shadow-[0_0_12px_rgba(205,198,148,0.35)]');
+          c.classList.add('bg-[#281724]', 'text-[#FFFDEF]', 'border-[#5b4354]');
+        });
+        chip.classList.remove('bg-[#281724]', 'text-[#FFFDEF]', 'border-[#5b4354]');
+        chip.classList.add('bg-[#CDC694]', 'text-[#1e0e1a]', 'border-[#CDC694]', 'shadow-[0_0_12px_rgba(205,198,148,0.35)]');
+      });
+    });
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-[#1e0e1a]/95 backdrop-blur-xl border-t border-[#5b4354]/60"><div class="flex justify-between items-center h-20 px-1"><a class="flex-1 flex flex-col items-center justify-center gap-1 min-h-[44px] text-[#FFFDEF]/70 hover:text-[#CDC694] transition-all rounded-lg" data-path="overview" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="text-[10px] font-bold font-cinzel tracking-wider">Overview</span></a><a aria-current="page" class="flex-1 flex flex-col items-center justify-center gap-1 min-h-[44px] transition-all rounded-lg text-[#CDC694] font-bold drop-shadow-[0_0_8px_rgba(205,198,148,0.4)]" data-path="providers" href="#"><span class="material-symbols-outlined text-[22px]">person_search</span><span class="text-[10px] font-bold font-cinzel tracking-wider">Providers</span></a><a class="flex-1 flex flex-col items-center justify-center gap-1 min-h-[44px] text-[#FFFDEF]/70 hover:text-[#CDC694] transition-all rounded-lg relative" data-path="ai-booking" href="#"><span class="material-symbols-outlined text-[24px]">auto_awesome</span><span class="text-[10px] font-bold font-cinzel tracking-wider">AI Booking</span></a><a class="flex-1 flex flex-col items-center justify-center gap-1 min-h-[44px] text-[#FFFDEF]/70 hover:text-[#CDC694] transition-all rounded-lg" data-path="schedule" href="#"><span class="material-symbols-outlined text-[22px]">calendar_month</span><span class="text-[10px] font-bold font-cinzel tracking-wider">Schedule</span></a><a class="flex-1 flex flex-col items-center justify-center gap-1 min-h-[44px] text-[#FFFDEF]/70 hover:text-[#CDC694] transition-all rounded-lg" data-path="admin" href="#"><span class="material-symbols-outlined text-[22px]">admin_panel_settings</span><span class="text-[10px] font-bold font-cinzel tracking-wider">Admin</span></a></div></nav></body></html>
+
+<!-- Samay — Cinematic Login -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_blank" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+
+    @keyframes ambientGlowPulse {
+      0%, 100% { opacity: 0.35; transform: scale(1) translateY(0); }
+      50% { opacity: 0.55; transform: scale(1.08) translateY(-8px); }
+    }
+    @keyframes subtleDrift {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(1.5deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+    .animate-glow {
+      animation: ambientGlowPulse 7s ease-in-out infinite;
+    }
+    .animate-orbital {
+      animation: subtleDrift 8s ease-in-out infinite;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "plum-dark": "#1e0e1a",
+            "plum-card": "#281724",
+            "plum-high": "#3a2335",
+            "plum-border": "#5b4354",
+            "plum-line": "#73596b",
+            "tan-gold": "#CDC694",
+            "coffee": "#FFFDEF",
+            "surface": "#281724",
+            "on-surface": "#FFFDEF",
+            "on-surface-variant": "#CDC694",
+            "primary": "#CDC694",
+            "on-primary": "#1e0e1a",
+            "outline": "#5b4354"
+          },
+          fontFamily: {
+            "headline": ["Cinzel", "serif"],
+            "body": ["Plus Jakarta Sans", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+      background: radial-gradient(circle at 50% 15%, #3a2335 0%, #281724 50%, #1e0e1a 85%, #140811 100%);
+    }
+  </style>
+</head>
+<body class="text-[#FFFDEF] font-body min-h-screen pt-safe pb-safe flex flex-col selection:bg-[#CDC694] selection:text-[#1e0e1a]">
+<main class="flex-1 flex flex-col relative w-full overflow-hidden">
+<!-- Ambient Luxury Glow Elements -->
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#CDC694]/15 rounded-full blur-3xl pointer-events-none animate-glow"></div>
+<div class="absolute top-72 -right-20 w-80 h-80 bg-[#5b4354]/30 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute bottom-10 -left-20 w-80 h-80 bg-[#3a2335]/40 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col w-full relative z-10 px-5 pb-10">
+<!-- Brand Hero & Celestial Emblem Section -->
+<div class="relative w-full pt-4 pb-2 flex flex-col items-center">
+<!-- Logo Emblem with Astrological Orbital Accent -->
+<div class="relative w-28 h-28 flex items-center justify-center animate-orbital">
+<!-- Orbital ring SVG effect -->
+<div class="absolute inset-0 rounded-full border border-dashed border-[#CDC694]/40 animate-spin" style="animation-duration: 40s;"></div>
+<div class="absolute inset-1 rounded-full border border-[#5b4354]"></div>
+<!-- Samay Logo -->
+<div class="relative z-10 w-20 h-20 rounded-full p-2 bg-[#281724]/90 backdrop-blur-md shadow-lg shadow-[#140811] border border-[#CDC694]/30 flex items-center justify-center">
+<img alt="Samay Brand Logo" class="w-full h-full object-contain filter drop-shadow-[0_2px_8px_rgba(205,198,148,0.35)]" src="https://lh3.googleusercontent.com/aida/ALJJyrCy0HZD0fIYeO7vt5WyN5-AuXek7FmjRyG6LFNcUM6sAWUd119T4p8MgOvWnAmTTSkE6ZJuMznCY30_MD9b-H73dykcaQ5Ai5JOmEM0aUOWOxLP1BKwBQ14sPkc4cLOfShtgqBcEUyBGN8cGN70IuBnBQ5h9sPjEuux9iv98Ts95dkF8CuCIutN1Kz7woSrszo3pQ2Cse6CWTvKsS-RFh1h0jJc1qZQajBCyQF7n8Yl"/>
+</div>
+</div>
+<!-- Brand Name & Tagline -->
+<div class="text-center mt-2.5">
+<span class="font-headline font-bold text-3xl tracking-widest uppercase text-[#FFFDEF]">Samay</span>
+<p class="font-body text-xs tracking-wider uppercase text-[#CDC694] mt-0.5 font-medium">Your time, perfectly scheduled.</p>
+</div>
+<!-- AI Engine Status Badge -->
+<div class="mt-3.5 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#281724] border border-[#5b4354] shadow-sm backdrop-blur-md">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#CDC694] opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-[#CDC694]"></span>
+</span>
+<span class="text-[11px] font-semibold text-[#FFFDEF] tracking-widest uppercase">
+            SAMAY AI ENGINE • 99.4% REAL-TIME AVAILABILITY
+          </span>
+</div>
+</div>
+<!-- Editorial Heading & Subtitle -->
+<header class="text-center mt-2 mb-6">
+<h1 class="font-headline font-bold text-[28px] leading-tight text-[#FFFDEF] tracking-wide uppercase">
+          Appointments,<br/>
+<span class="text-[#FFFDEF] font-bold">made effortless.</span>
+</h1>
+<p class="font-body text-[13px] leading-relaxed text-[#CDC694]/85 mt-2 max-w-xs mx-auto">
+          Find top verified providers across India, check instant slot availability, and book via conversational AI or traditional scheduling.
+        </p>
+</header>
+<!-- Ultra-Premium Glassmorphism Login Card -->
+<div class="relative w-full rounded-[20px] bg-[#281724]/90 p-5 backdrop-blur-xl border border-[#5b4354] shadow-2xl shadow-[#140811]">
+<!-- Role Switcher Tabs -->
+<div class="relative z-10 grid grid-cols-3 p-1 rounded-xl bg-[#1e0e1a] mb-5 border border-[#5b4354]/60">
+<button class="py-2 rounded-lg text-xs font-bold tracking-wider uppercase text-[#1e0e1a] bg-[#CDC694] transition-all shadow-md font-headline" id="tab-customer" onclick="selectRole('customer')" type="button">
+            Customer
+          </button>
+<button class="py-2 rounded-lg text-xs font-bold tracking-wider uppercase text-[#CDC694]/70 hover:text-[#FFFDEF] transition-all font-headline" id="tab-provider" onclick="selectRole('provider')" type="button">
+            Provider
+          </button>
+<button class="py-2 rounded-lg text-xs font-bold tracking-wider uppercase text-[#CDC694]/70 hover:text-[#FFFDEF] transition-all font-headline" id="tab-admin" onclick="selectRole('admin')" type="button">
+            Admin
+          </button>
+</div>
+<!-- Interactive Credential Form -->
+<form class="relative z-10 flex flex-col gap-4" onsubmit="event.preventDefault(); triggerAuth();">
+<!-- Workspace Email Field -->
+<div class="flex flex-col gap-1.5 text-left">
+<label class="text-[11px] font-bold text-[#CDC694] uppercase tracking-wider font-headline" for="auth-email">
+              Workspace Email
+            </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-[#CDC694]/70 text-lg pointer-events-none">mail</span>
+<input class="w-full h-11 pl-11 pr-4 bg-[#1e0e1a] rounded-xl text-sm text-[#FFFDEF] placeholder:text-[#CDC694]/40 border border-[#5b4354] focus:border-[#CDC694] focus:outline-none focus:ring-1 focus:ring-[#CDC694] transition-all" id="auth-email" placeholder="name@organization.in" required="" type="email" value="kavya.menon@example.in"/>
+</div>
+</div>
+<!-- Password / Passkey Field -->
+<div class="flex flex-col gap-1.5 text-left">
+<div class="flex justify-between items-center">
+<label class="text-[11px] font-bold text-[#CDC694] uppercase tracking-wider font-headline" for="auth-password">
+                Password or Passkey
+              </label>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-[#CDC694]/70 text-lg pointer-events-none">lock</span>
+<input class="w-full h-11 pl-11 pr-11 bg-[#1e0e1a] rounded-xl text-sm text-[#FFFDEF] placeholder:text-[#CDC694]/40 border border-[#5b4354] focus:border-[#CDC694] focus:outline-none focus:ring-1 focus:ring-[#CDC694] transition-all tracking-widest" id="auth-password" placeholder="••••••••••••" required="" type="password" value="KavyaBengaluru2025!"/>
+<button aria-label="Toggle password visibility" class="absolute right-3.5 text-[#CDC694]/70 hover:text-[#FFFDEF] transition-colors focus:outline-none flex items-center" onclick="togglePasswordVisibility()" type="button">
+<span class="material-symbols-outlined text-lg" id="eye-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Utility Row: Custom Checkbox & Recovery -->
+<div class="flex items-center justify-between pt-0.5">
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input checked="" class="peer sr-only" id="remember-checkbox" type="checkbox"/>
+<div class="w-4 h-4 rounded bg-[#1e0e1a] border border-[#5b4354] peer-checked:bg-[#CDC694] peer-checked:border-[#CDC694] flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-[#1e0e1a] text-xs font-bold hidden peer-checked:block">check</span>
+</div>
+<span class="text-xs text-[#CDC694]/90">Remember me</span>
+</label>
+<button class="text-xs font-semibold text-[#CDC694] hover:text-[#FFFDEF] transition-colors focus:outline-none" type="button">
+              Forgot passkey?
+            </button>
+</div>
+<!-- Primary CTA Button -->
+<button class="relative mt-1 w-full h-12 rounded-xl bg-[#CDC694] font-bold text-sm text-[#1e0e1a] flex items-center justify-center gap-2 shadow-lg shadow-[#140811] active:scale-[0.98] transition-transform overflow-hidden group border border-[#CDC694]" id="submit-btn" type="submit">
+<span class="relative z-10 flex items-center gap-1.5 font-bold tracking-wider uppercase font-headline">
+              Sign In to Samay
+              <span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
+</span>
+<!-- Shimmer sweep -->
+<span class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent"></span>
+</button>
+</form>
+<!-- Divider -->
+<div class="relative z-10 flex items-center my-4 gap-2">
+<div class="flex-1 h-px bg-[#73596b]/40"></div>
+<span class="text-[10px] font-bold text-[#CDC694]/70 uppercase tracking-widest px-1 font-headline">OR CONTINUE WITH</span>
+<div class="flex-1 h-px bg-[#73596b]/40"></div>
+</div>
+<!-- SSO Button Options -->
+<div class="relative z-10 grid grid-cols-2 gap-2.5">
+<button class="h-10 px-3 rounded-xl bg-[#1e0e1a] border border-[#5b4354] hover:border-[#CDC694] transition-all flex items-center justify-center gap-2 shadow-sm text-[#FFFDEF]" type="button">
+<!-- Google Icon -->
+<svg class="w-4 h-4 text-[#CDC694]" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12.24 10.285V13.4h6.887C18.2 16.3 15.64 18.5 12.24 18.5c-3.59 0-6.5-2.91-6.5-6.5s2.91-6.5 6.5-6.5c1.63 0 3.12.6 4.27 1.58l2.36-2.36C17.06 3.09 14.78 2.25 12.24 2.25c-5.38 0-9.75 4.37-9.75 9.75s4.37 9.75 9.75 9.75c5.62 0 9.35-3.95 9.35-9.52 0-.64-.06-1.26-.17-1.94H12.24z"></path>
+</svg>
+<span class="text-xs font-bold font-headline">Google</span>
+</button>
+<button class="h-10 px-3 rounded-xl bg-[#1e0e1a] border border-[#5b4354] hover:border-[#CDC694] transition-all flex items-center justify-center gap-2 shadow-sm text-[#FFFDEF]" type="button">
+<!-- Apple Icon -->
+<svg class="w-4 h-4 text-[#CDC694]" fill="currentColor" viewbox="0 0 24 24">
+<path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.47c.65-.79 1.1-1.89.98-2.99-.95.04-2.1.63-2.77 1.42-.59.68-1.11 1.79-.97 2.87 1.06.08 2.14-.52 2.76-1.3"></path>
+</svg>
+<span class="text-xs font-bold font-headline">Apple ID</span>
+</button>
+</div>
+<!-- New User Footnote -->
+<div class="mt-4 text-center">
+<p class="text-xs text-[#CDC694]/80">
+            New to Samay? <button class="text-[#CDC694] font-bold hover:underline" type="button">Create an account</button>
+</p>
+</div>
+</div>
+<!-- Quick Indian Persona Emulation Tray -->
+<div class="mt-6 w-full flex flex-col items-center">
+<div class="flex items-center gap-1.5 mb-2.5">
+<span class="material-symbols-outlined text-[#CDC694] text-sm">offline_bolt</span>
+<span class="text-[11px] font-bold text-[#CDC694]/80 uppercase tracking-widest font-headline">Fast Indian Persona Emulation</span>
+</div>
+<div class="w-full flex flex-col gap-2">
+<!-- Persona 1: Kavya Menon (Customer) -->
+<button class="w-full p-2.5 rounded-xl bg-[#281724]/90 border border-[#5b4354] hover:border-[#CDC694] active:bg-[#3a2335] transition-all flex items-center justify-between text-left group" onclick="setDemoPersona('kavya.menon@example.in', 'KavyaBengaluru2025!', 'customer')" type="button">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-[#3a2335] border border-[#CDC694]/40 flex items-center justify-center text-[#CDC694] font-headline text-xs font-bold">
+                KM
+              </div>
+<div>
+<div class="text-xs font-bold text-[#FFFDEF] flex items-center gap-1.5 font-headline">
+                  Kavya Menon 
+                  <span class="text-[9px] px-1.5 py-0.5 rounded bg-[#3a2335] text-[#CDC694] font-bold border border-[#5b4354] uppercase">Client</span>
+</div>
+<div class="text-[11px] text-[#CDC694]/80">Coimbatore &amp; Bengaluru • Instant Booking</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#CDC694]/70 group-hover:text-[#CDC694] transition-colors text-base">switch_account</span>
+</button>
+<!-- Persona 2: Dr. Arjun Venkatesh (Provider) -->
+<button class="w-full p-2.5 rounded-xl bg-[#281724]/90 border border-[#5b4354] hover:border-[#CDC694] active:bg-[#3a2335] transition-all flex items-center justify-between text-left group" onclick="setDemoPersona('arjun.venkatesh@clinic.in', 'ConsultSpecialistChennai2025!', 'provider')" type="button">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-[#3a2335] border border-[#CDC694]/50 flex items-center justify-center text-[#CDC694] font-headline text-xs font-bold">
+                AV
+              </div>
+<div>
+<div class="text-xs font-bold text-[#FFFDEF] flex items-center gap-1.5 font-headline">
+                  Dr. Arjun Venkatesh
+                  <span class="text-[9px] px-1.5 py-0.5 rounded bg-[#3a2335] text-[#CDC694] font-bold border border-[#5b4354]">₹1,200</span>
+</div>
+<div class="text-[11px] text-[#CDC694]/80">Consultant Specialist • Chennai • 45m Buffers</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#CDC694]/70 group-hover:text-[#CDC694] transition-colors text-base">switch_account</span>
+</button>
+<!-- Persona 3: Rohit Sharma (Admin) -->
+<button class="w-full p-2.5 rounded-xl bg-[#281724]/90 border border-[#5b4354] hover:border-[#CDC694] active:bg-[#3a2335] transition-all flex items-center justify-between text-left group" onclick="setDemoPersona('rohit.admin@samay.in', 'AdminMultiRoster2025#', 'admin')" type="button">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-[#3a2335] border border-[#5b4354] flex items-center justify-center text-[#CDC694] font-headline text-xs font-bold">
+                RS
+              </div>
+<div>
+<div class="text-xs font-bold text-[#FFFDEF] flex items-center gap-1.5 font-headline">
+                  Rohit Sharma
+                  <span class="text-[9px] px-1.5 py-0.5 rounded bg-[#3a2335] text-[#CDC694] font-bold border border-[#5b4354] uppercase">Admin</span>
+</div>
+<div class="text-[11px] text-[#CDC694]/80">Front-desk Admin • Multi-clinic roster</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#CDC694]/70 group-hover:text-[#CDC694] transition-colors text-base">switch_account</span>
+</button>
+</div>
+</div>
+<!-- Trust & Regulatory Compliance Banner -->
+<div class="mt-6 text-center">
+<div class="inline-flex items-center gap-1.5 text-[#CDC694]/80">
+<span class="material-symbols-outlined text-xs text-[#CDC694]">verified</span>
+<span class="text-[10px] tracking-wider uppercase font-semibold">ISO 27001 • DPDP ACT COMPLIANT • 256-BIT ENCRYPTION</span>
+</div>
+</div>
+</div>
+<script>
+      function selectRole(role) {
+        const tabs = ['customer', 'provider', 'admin'];
+        tabs.forEach(t => {
+          const el = document.getElementById('tab-' + t);
+          if (t === role) {
+            el.className = 'py-2 rounded-lg text-xs font-bold tracking-wider uppercase text-[#1e0e1a] bg-[#CDC694] transition-all shadow-md font-headline';
+          } else {
+            el.className = 'py-2 rounded-lg text-xs font-bold tracking-wider uppercase text-[#CDC694]/70 hover:text-[#FFFDEF] transition-all font-headline';
+          }
+        });
+
+        const submitBtn = document.getElementById('submit-btn');
+        if (role === 'customer') {
+          submitBtn.querySelector('.relative.z-10').innerHTML = `
+            Sign In to Samay
+            <span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">arrow_forward</span>
+          `;
+        } else if (role === 'provider') {
+          submitBtn.querySelector('.relative.z-10').innerHTML = `
+            Enter Provider Portal
+            <span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">calendar_month</span>
+          `;
+        } else {
+          submitBtn.querySelector('.relative.z-10').innerHTML = `
+            Access Admin Console
+            <span class="material-symbols-outlined text-base transition-transform group-hover:translate-x-1">shield_person</span>
+          `;
+        }
+      }
+
+      function togglePasswordVisibility() {
+        const pwdInput = document.getElementById('auth-password');
+        const icon = document.getElementById('eye-icon');
+        if (pwdInput.type === 'password') {
+          pwdInput.type = 'text';
+          pwdInput.classList.remove('tracking-widest');
+          icon.textContent = 'visibility_off';
+        } else {
+          pwdInput.type = 'password';
+          pwdInput.classList.add('tracking-widest');
+          icon.textContent = 'visibility';
+        }
+      }
+
+      function setDemoPersona(email, password, role) {
+        const emailField = document.getElementById('auth-email');
+        const pwdField = document.getElementById('auth-password');
+        
+        emailField.value = email;
+        pwdField.value = password;
+        selectRole(role);
+
+        emailField.classList.add('ring-2', 'ring-[#CDC694]');
+        pwdField.classList.add('ring-2', 'ring-[#CDC694]');
+        setTimeout(() => {
+          emailField.classList.remove('ring-2', 'ring-[#CDC694]');
+          pwdField.classList.remove('ring-2', 'ring-[#CDC694]');
+        }, 500);
+      }
+
+      function triggerAuth() {
+        const submitBtn = document.getElementById('submit-btn');
+        const originalContent = submitBtn.innerHTML;
+        
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+          <span class="relative z-10 flex items-center gap-2 text-[#1e0e1a] font-bold font-headline uppercase tracking-wide">
+            <span class="animate-spin material-symbols-outlined text-sm">progress_activity</span>
+            Authenticating with Samay...
+          </span>
+        `;
+
+        setTimeout(() => {
+          submitBtn.innerHTML = `
+            <span class="relative z-10 flex items-center gap-2 text-[#1e0e1a] font-bold font-headline uppercase tracking-wide">
+              <span class="material-symbols-outlined text-sm">check_circle</span>
+              Welcome to Samay
+            </span>
+          `;
+          setTimeout(() => {
+            submitBtn.innerHTML = originalContent;
+            submitBtn.disabled = false;
+          }, 1500);
+        }, 1000);
+      }
+    </script>
+</main>
+</body></html>

@@ -1,0 +1,6 @@
+{
+  "name": "R VEDHA",
+  "description": "R VEDHA — AI Smart Appointment Management Platform for luxury healthcare scheduling, patient intake, doctor availability, interactive calendar, analytics, and Vedha AI.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
